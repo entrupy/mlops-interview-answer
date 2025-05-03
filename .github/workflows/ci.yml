@@ -12,7 +12,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install --upgrade poetry
+      - uses: snok/install-poetry@v1
+        with:
+          version: '1.8.2'
       - run: poetry install --no-root --no-interaction
       - run: poetry run pytest
 
@@ -24,7 +26,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install --upgrade poetry
+      - uses: snok/install-poetry@v1
+        with:
+          version: '1.8.2'
       - name: Export requirements.txt for Docker
         run: poetry export -f requirements.txt --output requirements.txt --without-hashes
       - run: docker build . -t ml-interview-app:ci

@@ -44,7 +44,9 @@ poetry run pytest
 #### 1. Create Requirements.txt from pyproject.toml using poetry
 
 ```bash
-poetry export -f requirements.txt --output requirements.txt --without-hashes
+# This works for any Poetry version
+poetry install --no-root --no-interaction
+poetry run pip freeze > requirements.txt
 ```
 
 #### 2. Build and run with Docker
