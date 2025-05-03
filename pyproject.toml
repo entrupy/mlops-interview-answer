@@ -7,7 +7,8 @@ dependencies = [
     "uvicorn[standard]",
     "scikit-learn",
     "joblib",
-    "pytest"
+    "pytest",
+    "httpx"
 ]
 [build-system]
 requires = ["poetry-core"]
